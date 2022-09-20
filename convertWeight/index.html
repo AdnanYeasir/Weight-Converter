@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <!-- link bootstraps to use it -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+   <!-- how the page looks -->
+   <style> 
+        body{
+            /* pushes the text down */
+            margin-top:70px;
+            background:#333;
+            color:white;
+        }
+         
+header h1 {
+width:500px;
+margin: 0 auto;
+background: gray;
+text-align: left;
+        
+    }
+    </style> 
+    
+    
+    <title>Weight Converter</title>
+</head>
+<!-- all the code goes in the body -->
+<body>
+     <!-- container pushes everything in the middle -->
+    <div class="container">
+        <div class="col-md-6">
+            <!-- display the text and -# is the size  -->
+            <h1 class = "display -4 text-center mb-3"> Weight Converter</h1>
+            
+            <form>
+                <!-- form group is a bootstrap class which makes lable with proper structure  -->
+              <div class="form-group">
+                   <!-- type of input such as text or number  -->
+                  <input type="number"
+                  
+                  id ="lbsInput"  
+                        
+                  class="form-control form-control-lg" 
+                  placeholder ="Enter Pounds...">
+                  
+                  <!-- we us id so we can later point to it and manipulate the element -->
+                  <!-- class is from bootstrap for sizing "Set heights using classes like .form-control-lg"  -->
+              </div>   
+            </form>
+            <div id="output">
+                <!-- the class is for changing color of the box -->
+                <div class="card text-white bg-primary mb-3" style="max-width: 30rem;">
+                    <div class = "card-block">
+                        <!-- card block is to make a block and put text in it -->
+                        <h4>Grams:</h4>
+                        <div id ="gramsOutput"></div>
+                        <!-- id so we can use that value for something -->
+                    </div>
+                </div>
+                <!-- copy paste for kg and oz -->
+                <div class="card text-white bg-secondary mb-3" style="max-width: 30rem;">
+                    <div class = "card-block">
+                        <h4>Kilograms:</h4>
+                        <div id ="kgOutput"></div>
+                    </div>
+                </div>
+
+                <div class="card text-white bg-danger mb-3" style="max-width: 30rem;">
+                    <div class = "card-block">
+                        <h4>Ounces:</h4>
+                        <div id ="ozOutput"></div>
+                    </div>
+                </div>
+            </div> 
+        </div>
+    </div>
+     </form>
+     <script>
+        document.getElementById('lbsInput').addEventListener('input', function(e){
+            // e.target value is the value typed in the search, in this case its lbs
+       let lbs = e.target.value; 
+        document.getElementById('gramsOutput').innerHTML = (lbs/ 0.0022046).toFixed(2);
+        document.getElementById('kgOutput').innerHTML = (lbs/ 2.2046).toFixed(2);
+        document.getElementById('ozOutput').innerHTML = (lbs/ 16).toFixed(2);
+        })
+    </script>
+
+    // <!-- for kg -->
+
+
+
+    <div class="container">
+        <div class="col-md-6">
+            <form>
+                <!-- form group is a bootstrap class which makes lable with proper structure  -->
+              <div class="form-group">
+                   <!-- type of input such as text or number  -->
+                  <input type="number"
+                  
+                  id ="kgInput"  
+                        
+                  class="form-control form-control-lg" 
+                  placeholder ="Enter Kilograms...">
+                  
+                  <!-- we us id so we can later point to it and manipulate the element -->
+                  <!-- class is from bootstrap for sizing "Set heights using classes like .form-control-lg"  -->
+              </div>   
+            </form>
+            <div id="output">
+                <!-- the class is for changing color of the box -->
+                <div class="card text-white bg-primary mb-3" style="max-width: 30rem;">
+                    <div class = "card-block">
+                        <!-- card block is to make a block and put text in it -->
+                        <h4>Grams:</h4>
+                        <div id ="grams_Output"></div>
+                        <!-- id so we can use that value for something -->
+                    </div>
+                </div>
+                <!-- copy paste for kg and oz -->
+                <div class="card text-white bg-secondary mb-3" style="max-width: 30rem;">
+                    <div class = "card-block">
+                        <h4>Pounds:</h4>
+                        <div id ="lb_Output"></div>
+                    </div>
+                </div>
+
+                <div class="card text-white bg-danger mb-3" style="max-width: 30rem;">
+                    <div class = "card-block">
+                        <h4>Ounces:</h4>
+                        <div id ="oz_Output"></div>
+                    </div>
+                </div>
+            </div> 
+        </div>
+    </div>
+
+    <script>
+       
+
+
+
+
+        document.getElementById('kgInput').addEventListener('input', function(f){
+            // e.target value is the value typed in the search, in this case its lbs
+       let kg = f.target.value; 
+        document.getElementById('grams_Output').innerHTML = (kg *1000).toFixed(2);
+        document.getElementById('lb_Output').innerHTML = (kg * 2.2046).toFixed(2);
+        document.getElementById('oz_Output').innerHTML = (kg * 35.274).toFixed(2);
+    
+
+        });
+    </script>
+
+<!-- Grams -->
+
+<div class="container">
+    <div class="col-md-6">
+        <form>
+            <!-- form group is a bootstrap class which makes lable with proper structure  -->
+          <div class="form-group">
+               <!-- type of input such as text or number  -->
+              <input type="number"
+              
+              id ="gramInput"  
+                    
+              class="form-control form-control-lg" 
+              placeholder ="Enter Grams...">
+              
+              <!-- we us id so we can later point to it and manipulate the element -->
+              <!-- class is from bootstrap for sizing "Set heights using classes like .form-control-lg"  -->
+          </div>   
+        </form>
+        <div id="output">
+            <!-- the class is for changing color of the box -->
+            <div class="card text-white bg-primary mb-3" style="max-width: 30rem;">
+                <div class = "card-block">
+                    <!-- card block is to make a block and put text in it -->
+                    <h4>Kilograms:</h4>
+                    <div id ="kg__Output"></div>
+                    <!-- id so we can use that value for something -->
+                </div>
+            </div>
+            <!-- copy paste for kg and oz -->
+            <div class="card text-white bg-secondary mb-3" style="max-width: 30rem;">
+                <div class = "card-block">
+                    <h4>Pounds:</h4>
+                    <div id ="lb__Output"></div>
+                </div>
+            </div>
+
+            <div class="card text-white bg-danger mb-3" style="max-width: 30rem;">
+                <div class = "card-block">
+                    <h4>Ounces:</h4>
+                    <div id ="oz__Output"></div>
+                </div>
+            </div>
+        </div> 
+    </div>
+</div>
+
+<script>
+   
+
+
+
+
+    document.getElementById('gramInput').addEventListener('input', function(g){
+        // e.target value is the value typed in the search, in this case its lbs
+   let gram = g.target.value; 
+    document.getElementById('kg__Output').innerHTML = (gram *.001).toFixed(2);
+    document.getElementById('lb__Output').innerHTML = (gram * 0.00220462).toFixed(2);
+    document.getElementById('oz__Output').innerHTML = (gram * 0.035274).toFixed(2);
+
+
+    });
+</script>
+
+<!-- ounces -->
+
+
+
+<div class="container">
+    <div class="col-md-6">
+        <form>
+            <!-- form group is a bootstrap class which makes lable with proper structure  -->
+          <div class="form-group">
+               <!-- type of input such as text or number  -->
+              <input type="number"
+              
+              id ="ozInput"  
+                    
+              class="form-control form-control-lg" 
+              placeholder ="Enter Ounces...">
+              
+              <!-- we us id so we can later point to it and manipulate the element -->
+              <!-- class is from bootstrap for sizing "Set heights using classes like .form-control-lg"  -->
+          </div>   
+        </form>
+        <div id="output">
+            <!-- the class is for changing color of the box -->
+            <div class="card text-white bg-primary mb-3" style="max-width: 30rem;">
+                <div class = "card-block">
+                    <!-- card block is to make a block and put text in it -->
+                    <h4>Kilograms:</h4>
+                    <div id ="kg___Output"></div>
+                    <!-- id so we can use that value for something -->
+                </div>
+            </div>
+            <!-- copy paste for kg and oz -->
+            <div class="card text-white bg-secondary mb-3" style="max-width: 30rem;">
+                <div class = "card-block">
+                    <h4>Pounds:</h4>
+                    <div id ="lb___Output"></div>
+                </div>
+            </div>
+
+            <div class="card text-white bg-danger mb-3" style="max-width: 30rem;">
+                <div class = "card-block">
+                    <h4>Grams:</h4>
+                    <div id ="grams___Output"></div>
+                </div>
+            </div>
+        </div> 
+    </div>
+</div>
+
+<script>
+   
+
+
+
+
+    document.getElementById('ozInput').addEventListener('input', function(h){
+        // e.target value is the value typed in the search, in this case its lbs
+   let oz = h.target.value; 
+    document.getElementById('kg___Output').innerHTML = (oz *0.0283495).toFixed(2);
+    document.getElementById('lb___Output').innerHTML = (oz * 0.0625).toFixed(2);
+    document.getElementById('grams___Output').innerHTML = (oz * 28.3495).toFixed(2);
+
+
+    });
+</script>
+</body>
+</html> 
